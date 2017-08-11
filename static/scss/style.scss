@@ -1,0 +1,1061 @@
+@charset "utf-8";
+@import "variable";
+/*!
+
+Author: xiejiahe;   
+8316687;
+
+因为这是个人项目，所以css写在一个文件易维护又高效，
+
+ */
+a,
+abbr,
+address,
+article,
+aside,
+audio,
+b,
+blockquote,
+body,
+canvas,
+caption,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+samp,
+section,
+small,
+span,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+ul,
+var,
+video {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    font-family: "Comic Sans MS", "Helvetica Neue", Helvetica,Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
+    background: #eee;
+}
+
+body,
+html,
+#app {
+    height: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup, 
+menu,
+nav,
+section {
+    display: block;
+}
+
+h1 {
+    font-size: 18px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal;
+}
+
+code,
+kbd,
+pre,
+samp,
+tt {
+    font-family: "Courier New", Courier, monospace;
+}
+
+small {
+    font-size: 12px;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:link,
+a:visited {
+    color: #000;
+}
+
+abbr[title],
+acronym[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+q:after,
+q:before {
+    content: '';
+}
+
+legend {
+    color: #000;
+}
+
+fieldset,
+img,
+iframe {
+    border: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+hr {
+    border: none;
+    height: 1px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"],
+input[type="reset"] {
+    -webkit-appearance: none;
+    outline: none;
+    border: 1px solid #000;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+    cursor: pointer;
+    outline:none;
+}
+
+i,
+em {
+    font-style: normal;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    src: url($ttf) format('truetype');
+}
+
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+// =======================
+// ======= 顶部进度条 ======
+// =======================
+
+.progress {
+    z-index: 9999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1%;
+    height: 3px;
+    background: #f50;
+    @include prefix(animation, progress-await 20s linear forwards);
+
+    &.active {
+
+        .progress-forward {
+            @include prefix(animation, progress-forward 200ms linear forwards);
+        }
+    }
+
+    .progress-forward {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 1%;
+        height: 3px;
+        background: #f50;
+    }
+}
+
+
+
+// ==========================
+// =========== 404 ==========
+// ==========================
+
+.error {
+    height: 100%;
+    text-align: center;
+    @include center;
+
+    h2 {
+        font-size: 80px;
+    }
+
+    a {
+        font-size: 30px;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}
+
+
+
+
+
+
+// ========================
+// ========== 登录 =========
+// ========================
+
+.login {
+    height: 100%;
+    color: #fff;
+    background: #000 url($bg) no-repeat center center;
+    background-size: cover;
+    @include center;
+
+    .avatar {
+        text-align: center;
+        overflow: hidden;
+
+        img {
+            border: 5px solid #f50;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    .common {
+        width: 300px;
+        margin-top: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, .7);
+        @include display(flex);
+
+        label {
+            font-size: 25px;
+            color: #fff;
+        }
+
+        input {
+            @include prefix(flex, 1);
+            font-size: 25px;
+            color: #fff;
+            padding: 0 0 0 15px;
+            background: transparent;
+            border: none;
+
+            &::-webkit-input-placeholder {
+                color: rgba(255, 255, 255, .7);
+            }
+            
+            // 解决自动填充黄色背景， 但是不是终极解决方案
+            &:-webkit-autofill {
+                  -webkit-text-fill-color: #fff !important;
+                  transition: background-color 5000s ease-in-out 0s;
+            }
+        }
+    }
+
+    .btn {
+        margin-top: 20px;
+        height: 45px;
+        border-radius: 5px;
+        background: red;
+        color: rgba(255, 255, 255, .8);
+        font-size: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        background: -webkit-linear-gradient(top, #F70083, #ff0000);
+        @include prefix(user-select, none);
+        @include center;
+
+        &:hover {
+            background: -webkit-linear-gradient(top, #ff0000, #F70083);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// ==========================
+// =========== 头部 ==========
+// ==========================
+
+.header {
+    position: relative;
+    height: $titleHeight;
+    background: #20A0FF;
+
+    .logo {
+        z-index: 2;
+        position: relative;
+        margin-left: 20px;
+        line-height: 40px;
+    }
+
+    .title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include center;
+        color: #fff;
+        font-size: 20px;
+    }
+
+    .login-user {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        height: 100%;
+        padding-top: 9px;
+        cursor: pointer;
+
+        &.active {
+
+            .top i {
+                @include prefix(transform, rotate(180deg));
+            }
+
+            .drop-down {
+                @include prefix(animation, drop-down .3s ease-in);
+            }
+        }
+
+        .top {
+
+            span {
+                color: #fff;
+                font-size: 18px;
+                font-weight: bold;
+                @include prefix(user-select, none);
+            }
+
+            i {
+                display: inline-block;
+                color: #fff;
+                font-weight: bold;
+                @include prefix(transition, transform .15s linear);
+            }
+        }
+    }
+
+    .drop-down {
+        z-index: 99999;
+        position: absolute;
+        top: $titleHeight;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 1px 5px #ccc;
+        border-radius: 0 0 3px 3px;
+        @include prefix(transform-origin, center top);
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -20px;
+            left: 49%;
+            width: 0;
+            height: 0;
+            border: 12px solid transparent;
+            border-bottom-color: #fff;
+
+        }
+
+        div {
+            padding: 10px 3px 10px 10px;
+            font-size: 16px;
+
+            &:hover {
+                background: #f6f6f6;
+            }
+        }
+    }
+}
+
+
+// ==========================
+// ========= 底部信息 ========
+// ==========================
+
+.footer {
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==========================
+// ========== 侧边栏 =========
+// ==========================
+
+.sidebar {
+    width: $sidebarWidth;
+    height: 100%;
+    padding-bottom: $paddingBottom;
+    background: #eef1f6;
+    @include prefix(transition, transform .1s linear);
+
+    .nav {
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding-bottom: 90px;
+        @extend %common-bar;
+    }
+
+    .nav-list {
+        position: relative;
+        @include prefix(user-select, none);
+
+        // 高亮
+        &.active {
+
+            .arrow {
+                @include prefix(transform, rotate(180deg));
+            }
+
+            .nav-children {
+                display: block;
+
+                div {
+                    @include prefix(animation, slide-right .13s ease-in forwards);
+
+                    // 一般子菜单不会超过8个, 从第2个开始到第“8”个
+                    @for $i from 2 to 9 {
+                        &:nth-child(#{$i}) {
+                            @include prefix(animation-delay, ($i * .07s));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .nav-title {
+        position: relative;
+        padding: 15px 10px 15px 15px;
+        cursor: pointer;
+        @extend %common;
+
+        .icon {
+            font-size: 20px;
+            color: #48576a;
+        }
+
+        span {
+            margin-left: 8px;
+            font-size: 16px;
+            color: #48576a;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 0;
+            right: 15px;
+            height: 100%;
+            display: inline-block;
+            font-size: 18px;
+            color: #48576a;
+            @include prefix(transition, transform .13s linear);
+            @include display(box);
+            @include prefix(box-align, center);
+        }
+    }
+
+    .nav-children {
+        background: #e4e8f1;
+        display: none;
+
+        div {
+            color: #48576a;
+            font-size: 14px;
+            padding: 10px 0 10px 30px;
+            cursor: pointer;
+            @extend %common;
+            @include prefix(transform, translate3d(99%, 0, 0));
+
+            &.router-link-active {
+                color: #20A0FF;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==========================
+// ========= 后台主页 ========
+// ==========================
+
+
+.home {
+    position: relative;
+    height: 100%;
+    overflow-y: hidden;
+
+    .route-right {
+        z-index: 2;
+        position: absolute;
+        top: $titleHeight;
+        left: $sidebarWidth;
+        right: 0;
+        bottom: 0;
+        padding: 15px 15px 100px 15px;
+        background: #fff;
+        overflow-x: hidden;
+        overflow-y: auto;
+        @extend %common-bar;
+        @include prefix(transition, left .1s linear);
+
+        // 收起
+        &.active {
+            left: 0;
+        }
+    }
+
+    .title-header {
+        position: relative;
+        height: 50px;
+        margin-bottom: 20px;
+        background: #20A0FF;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 3px;
+        @include center(flex-start, center, start, center);
+        @include prefix(user-select, none);
+
+        i {
+            display: inline-block;
+            margin-left: 15px;
+            color: #fff;
+            cursor: pointer;
+            @include prefix(transition, transform .12s linear);
+
+            &.active {
+                @include prefix(transform, rotate(90deg));
+            }
+        }
+
+        em {
+            color: #fff;
+            margin-left: 20px;
+        }
+    }
+    
+    // 标题下面的方块提示
+    .square {
+        margin: 0 0 20px 0;
+        @include display(flex);
+
+        i {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            vertical-align: middle;
+
+            &.blue {
+                background: #c9e5f5;
+            }
+
+            &.warn {
+                background: #FF4949;
+            }
+        }
+
+        div {
+            margin-right: 20px;
+        }
+
+        span {
+            @include prefix(user-select, none);
+            vertical-align: middle;
+        }
+    }
+    
+    // ========== 表格 ==========
+    .table {
+        border: 1px solid #dfe6ec;
+
+        .head {
+            background: #eef1f6;
+
+            span {
+                font-weight: bold;
+            }
+        }
+
+        .common {
+            border-radius: 3px 3px 0 0;
+            @include display(flex);
+
+            span {
+                padding: 10px 0;
+                font-size: 17px;
+                @include prefix(flex, 1);
+                @include center;
+                
+                &:not(:nth-last-child(1)) {
+                    border-right: 1px solid #dfe6ec;
+                }
+            }
+        }
+
+        .list {
+            @include prefix(transition, background .13s linear);
+
+            &:not(:nth-last-child(1)) {
+                border-bottom: 1px solid #dfe6ec;
+            }
+            
+            &:hover {
+                background: #f7f7f7;
+            }
+            
+            // 如果是今天加个高亮
+            &.today {
+                background: #c9e5f5;
+            }
+
+            &.warn {
+                background: #FF4949;
+            }
+
+            .operation {
+
+                .open {
+                    background: #20A0FF;
+                    @extend %common-operation;
+                }
+
+                .del {
+                    background: #f50;
+                    @extend %common-operation;
+                }
+
+                .edit {
+                    background: #20A0FF;
+                    @extend %common-operation;
+                }
+            }
+
+            .link {
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+// ==========================
+// ========= 网站信息 ========
+// ==========================
+
+.website-info {
+
+    .info {
+
+        .name {
+            text-align: right;
+        }
+
+        em,
+        span {
+            font-size: 18px;
+        }
+    }
+}
+
+
+
+
+// =====================================
+// ========= 添加角色和修改个人信息 ========
+// =====================================
+
+.add-user,
+.modify {
+    
+    .add {
+
+        td {
+            margin-bottom: 20px;
+        }
+
+        .name {
+            text-align: right;
+        }
+
+        .btn {
+            text-align: center;
+
+            div {
+                margin-top: 5px;
+                padding: 7px 0;
+                border-radius: 5px;
+                font-size: 16px;
+                font-weight: bold;
+                background: #20A0FF;
+                color: #fff;
+                cursor: pointer;
+                @include prefix(user-select, none);
+                @include prefix(transition, background .1s linear);
+
+                &:hover {
+                    background: #1297FD;
+                }
+            }
+        }
+
+        em {
+            font-size: 18px;
+            color: #48576a;
+        }
+
+        input {
+            width: 220px;
+            margin: 10px 0;
+            padding: 0 0 0 10px;
+            height: 30px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            color: #48576a;
+        }
+
+        .readonly {
+            background: #e1e1e1;
+            cursor: not-allowed;
+            @include prefix(user-select, none);
+        }
+    }
+
+
+}
+
+
+
+
+
+// ==========================
+// ========= 添加分类 ========
+// ==========================
+
+.add-tag {
+
+    .tag {
+        @include display(flex);
+        @include prefix(flex-wrap, wrap);
+
+        div {
+            position: relative;
+            width: 19%;
+            margin: 0 10px 15px 0;
+            padding: 5px 5px;
+            border-radius: 5px;
+            background: #20A0FF;
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @include prefix(user-select, none);
+
+            &:hover {
+
+                i {
+                    display: block;
+                }
+            }
+
+
+
+            i {
+                position: absolute;
+                top: 3px;
+                right: 5px;
+                color: #fff;
+                cursor: pointer;
+                font-weight: bold;
+                display: none;
+
+                &:active {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .tag-title {
+        margin: 20px 0;
+        border-left: 7px solid #20A0FF;
+        padding-left: 10px;
+        font-size: 18px;
+        color: #666;
+    }
+
+    .input {
+        @include display(flex);
+
+        input {
+            width: 200px;
+            height: 30px;
+            padding: 0 5px 0 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            color: #48576a;
+        }
+
+        .btn {
+            width: 50px;
+            background: #20A0FF;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            @include center;
+            @include prefix(user-select, none);
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
+
+            &:hover {
+                background: #16B3FF;
+            }
+        }
+    }
+}
+
+
+
+
+// ==========================
+// ========= 发布文章 ========
+// ==========================
+
+
+.release-article {
+
+    .radio {
+        @include display(flex);
+        @include prefix(flex-wrap, wrap);
+
+        div {
+            width: 200px;
+            text-align: center;
+            border: 1px solid #bfcbd9;
+            margin: 0 10px 10px 0;
+            padding: 8px 3px;
+            cursor: pointer;
+            border-radius: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 16px;
+            font-weight: bold;
+            @include prefix(transition, all .1s linear);
+            @include prefix(user-select, none);
+
+            &:hover {
+                color: #20a0ff;
+            }
+
+            &.active {
+                color: #fff;
+                background: #20a0ff;
+            }
+        }
+    }
+
+    .release-btn {
+        margin: 15px 10px;
+        padding: 10px 0;
+        background: #20A0FF;
+        color: #fff;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        @include prefix(user-select, none);
+        @include prefix(transition, background .1s linear);
+
+        &:hover {
+            background: #1087FD;
+        }
+    }
+}
+
+
+/*!
+ *  end
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
