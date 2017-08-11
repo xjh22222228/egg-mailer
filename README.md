@@ -7,13 +7,13 @@
 
 ## 技术栈
 ```
-Vue2.0			  # https://cn.vuejs.org/v2/guide/
-Vuex		     # 状态共享
-VueRouter	     # Vue 路由
-Sass			  # 目前最火的CSS预处理器
+Vue2.0         # https://cn.vuejs.org/v2/guide/
+Vuex           # 状态共享
+VueRouter      # Vue 路由
+Sass           # 目前最火的CSS预处理器
 Animat.css     # CSS动画库
-ES6			     # ES6 是目前的趋势
-Webpack	     # 构建打包工具
+ES6	           # ES6 是目前的趋势
+Webpack        # 构建打包工具
 Element-UI     # PC-UI组件库
 axios          # Promise HTTP请求库
 vue-simplemde  # Markdown 编辑器。 后续要换一个。
