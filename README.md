@@ -19,7 +19,7 @@ Element-UI     # PC-UI组件库
 axios          # Promise HTTP请求库
 vue-simplemde  # Markdown 编辑器。 后续要换一个。
 Echarts        # 图表
-
+```
 
 
 
