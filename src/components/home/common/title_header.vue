@@ -1,7 +1,3 @@
-<!-- 
-Author: XieJiaHe
-Concat: 8316687
- -->
  <template>
  	<div class="title-header">
  		<i class="iconfont" @click="$store.commit('open')" :class="{active: open}">&#xe677;</i>

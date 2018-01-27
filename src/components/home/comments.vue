@@ -1,7 +1,3 @@
-<!-- 
-Author: XieJiaHe
-Concat: 8316687
- -->
 <template>
 	<transition enter-active-class="animated bounceInUp">
 		<section class="comments">
@@ -30,11 +26,11 @@ Concat: 8316687
 					<span>操作</span>
 				</div>
 
-				<div class="common list" v-for="n in 10">
-					<span>01</span>
+				<div class="common list" v-for="(n, index) in 10" :key="index">
+					<span>0{{ index + 1 }}</span>
 					<span>1970-01-01</span>
 					<span>Admin</span>
-					<span>这是一个博客系统，希望喜欢的同学Github点个赞。感谢！</span>
+					<span>Hello World！</span>
 					<span>192.168.0.1</span>
 					<span class="operation">
 						<a href="#" class="open" target="_blank">打开</a>

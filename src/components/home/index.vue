@@ -1,7 +1,3 @@
-<!-- 
-Author: XieJiaHe
-Concat: 8316687
- -->
 <template>
 	<transition enter-active-class="animated zoomInDown">
 		<section class="home">

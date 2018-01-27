@@ -1,14 +1,4 @@
 @charset "utf-8";
-/*
-Author: XieJiaHe
-Concat: 8316687
-*/
-
-
-// 后台是给自己用的， 所以只考虑 webkit 内核。 其他不考虑。 既减少代码又高效
-// 几乎所有存在兼容性问题都 include， 如果要兼容其他请在下面添加前缀即可
-
-
 @mixin keyframes($name){
     /*
     @keyframes #{$name} {
@@ -99,7 +89,7 @@ $titleHeight: 50px;
 $paddingBottom: $titleHeight + 30;
 
 // 侧边栏宽度
-$sidebarWidth: 230px;
+$sidebarWidth: 160px;
 
 // ttf 字体路径, 缓存原因经常要改，放在这里方便
 $ttf: '/static/fonts/alibaba/iconfont.ttf?t=11';

@@ -1,9 +1,4 @@
-<!-- 
-Author: XieJiaHe
-Concat: 8316687
- -->
 <!-- 登录记录图表 -->
-
 <template>
 	<transition enter-active-class="animated bounceInUp">
 		<section class="record-chart">

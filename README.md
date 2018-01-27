@@ -1,8 +1,6 @@
 
 
-Vue Blog admin 管理后台系统
-
-
+基于Vue SPA构建后台系统
 
 
 
@@ -11,13 +9,13 @@ Vue Blog admin 管理后台系统
 Vue2.0         # https://cn.vuejs.org/v2/guide/
 Vuex           # 状态共享
 VueRouter      # Vue 路由
-Sass           # 目前最火的CSS预处理器
+Sass           # CSS预处理器
 Animat.css     # CSS动画库
 ES6            # ES6是目前的趋势
 Webpack        # 构建打包工具
 Element-UI     # PC-UI组件库
 axios          # Promise HTTP请求库
-vue-simplemde  # Markdown 编辑器。 后续要换一个。
+vue-simplemde  # Markdown 编辑器
 Echarts        # 图表
 ```
 
@@ -32,8 +30,8 @@ Echarts        # 图表
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8088
-npm run dev
+# serve with hot reload at localhost:8888
+npm start
 
 # build for production with minification
 npm run build
@@ -42,8 +40,6 @@ npm run build
 npm run build --report
 ```
 
-
-![](https://raw.githubusercontent.com/xjh22222228/diamonds/master/static/images/pay.jpg)
 
 
 

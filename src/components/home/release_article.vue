@@ -1,9 +1,4 @@
-<!-- 
-Author: XieJiaHe
-Concat: 8316687
- -->
  <!-- 发布文章 -->
-
  <template>
  	<transition enter-active-class="animated bounceInDown">
 		<section class="release-article">

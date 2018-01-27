@@ -1,13 +1,5 @@
 @charset "utf-8";
 @import "variable";
-/*!
-
-Author: xiejiahe;   
-8316687;
-
-因为这是个人项目，所以css写在一个文件易维护又高效，
-
- */
 a,
 abbr,
 address,
@@ -316,7 +308,7 @@ em {
 .login {
     height: 100%;
     color: #fff;
-    background: #000 url($bg) no-repeat center center;
+    background: #000 no-repeat center center;
     background-size: cover;
     @include center;
 
@@ -325,7 +317,6 @@ em {
         overflow: hidden;
 
         img {
-            border: 5px solid #f50;
             border-radius: 50%;
             width: 150px;
             height: 150px;

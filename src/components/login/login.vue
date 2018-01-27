@@ -1,7 +1,4 @@
 <template>
-	<!--  
-		issue: Chrome 自动填充出现黄色背景， 目前没有终极解决方案。 如果有请联系我，谢谢。
-	 -->
 	<section class="login">
 		<transition enter-active-class="shake" appear leave-active-class="fadeOut">
 			<div class="login-box animated">

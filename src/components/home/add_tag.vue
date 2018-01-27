@@ -1,9 +1,4 @@
-<!-- 
-Author: XieJiaHe
-Concat: 8316687
- -->
 <!-- 添加分类 -->
-
 <template>
 	<transition enter-active-class="animated bounceInDown">
 		<section class="add-tag">

@@ -1,7 +1,3 @@
-<!-- 
-Author: XieJiaHe
-Concat: 8316687
- -->
 <!-- 添加用户角色 -->
 <template>
 	<transition enter-active-class="animated bounceInDown">

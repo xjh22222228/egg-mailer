@@ -1,8 +1,3 @@
-<!-- 
-Author: XieJiaHe
-Concat: 8316687
- -->
-
  <template>
  	<footer class="footer" v-once v-pre>
  		<div>

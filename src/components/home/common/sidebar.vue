@@ -1,7 +1,3 @@
-<!-- 
-Author: XieJiaHe
-Concat: 8316687
- -->
 <template>
 	<section class="sidebar">
 		<!-- 导航 Begin -->
