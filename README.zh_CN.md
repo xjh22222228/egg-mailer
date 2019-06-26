@@ -1,6 +1,7 @@
 # egg-mailer
 
-[nodemailer](https://github.com/nodemailer/nodemailer) plugin for Egg.js.
+此插件基于 [nodemailer](https://github.com/nodemailer/nodemailer) 实现一个简单的配置封装，具体使用方法你还需要阅读 [nodemailer](https://github.com/nodemailer/nodemailer) 的文档。
+
 
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
@@ -23,26 +24,18 @@
 [download-url]: https://npmjs.org/package/egg-mailer
 
 
-[README](README.md) | [中文文档](README.zh_CN.md)
 
-
-## Install
-
-```bash
-$ npm i egg-mailer --save
-```
-
-## Usage
+## 开启插件
 
 ```js
-// {app_root}/config/plugin.js
+// config/plugin.js
 exports.mailer = {
   enable: true,
   package: 'egg-mailer',
 };
 ```
 
-## Configuration
+## 配置
 
 ```js
 // {app_root}/config/config.default.js
@@ -51,29 +44,27 @@ exports.mailer = {
   port: 587,
   secure: false, // true for 465, false for other ports
   auth: {
-    user: testAccount.user, // generated ethereal user
-    pass: testAccount.pass  // generated ethereal password
+    user: testAccount.user, // 用户名
+    pass: testAccount.pass  // 密码
   }
 };
 ```
 
-see [nodemailer](https://nodemailer.com/about/) for more detail.
-
-## Example
+## 使用场景
 ```js
 // app/controller/home.js
 class HomeController extends Controller {
   async index() {
     const { ctx, app } = this;
-    // sync
+    // 同步
     await app.mailer.send({
-      from: '"Fred Foo 👻" <foo@example.com>', // sender address, [options] default to user
-      to: "bar@example.com, baz@example.com", // list of receivers
-      subject: "Hello ✔", // Subject line
-      text: "Hello world?", // plain text body
-      html: "<b>Hello world?</b>" // html body
+      from: '"Fred Foo 👻" <foo@example.com>', // 发件人地址, [可选] 默认为用户名
+      to: "bar@example.com, baz@example.com",  // 接收人名单
+      subject: "Hello ✔",                      // 主题
+      text: "Hello world?",                    // 文本内容
+      html: "<b>Hello world?</b>"              // html body
     });
-    // async
+    // 异步
     app.mailer.send({
       from: '"Fred Foo 👻" <foo@example.com>',
       to: "bar@example.com, baz@example.com",
@@ -91,10 +82,14 @@ class HomeController extends Controller {
 }
 ```
 
+## 详细配置
 
-## Questions & Suggestions
+请到 [nodemailer](https://nodemailer.com/about/) 查看详细配置项说明。
 
-Please open an issue [here](https://github.com/eggjs/egg/issues).
+
+## 提问交流
+
+请到 [egg issues](https://github.com/eggjs/egg/issues) 异步交流。
 
 ## License
 
