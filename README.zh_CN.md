@@ -67,6 +67,7 @@ class HomeController extends Controller {
     // 异步
     app.mailer.send({
       from: '"Fred Foo 👻" <foo@example.com>',
+      // 支持数组 ['bar@example.com', 'baz@example.com']
       to: "bar@example.com, baz@example.com",
       subject: "Hello ✔",
       text: "Hello world?",

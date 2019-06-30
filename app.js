@@ -11,19 +11,25 @@ class Email {
     this.app.mailer.send = this.handleSendMail;
   }
 
-  handleSendMail(data, callback) {
+  async handleSendMail(data, callback) {
     if (!this.app.mailer || typeof this.app.mailer.sendMail !== 'function') {
       console.log('Mail Delivery Failed, Check the configuration file.');
       return;
     }
-    const defaultData = Object.assign({}, {
+    
+    let defaultData = Object.assign({}, {
       from: this.config.mailer && this.config.mailer.auth && this.config.mailer.auth.user
     }, data);
+
+    if (Array.isArray(defaultData.to)) {
+      defaultData.to = defaultData.to.join();
+    }
     
     if (typeof callback === 'function') {
       this.app.mailer.sendMail(defaultData, callback);
       return;
     }
+
     return new Promise((resolve, reject) => {
       this.app.mailer.sendMail(defaultData, function(err, info) {
         if (err) {

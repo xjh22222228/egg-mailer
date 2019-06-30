@@ -68,6 +68,7 @@ class HomeController extends Controller {
     // sync
     await app.mailer.send({
       from: '"Fred Foo 👻" <foo@example.com>', // sender address, [options] default to user
+      // // Array => ['bar@example.com', 'baz@example.com']
       to: "bar@example.com, baz@example.com", // list of receivers
       subject: "Hello ✔", // Subject line
       text: "Hello world?", // plain text body
@@ -76,6 +77,7 @@ class HomeController extends Controller {
     // async
     app.mailer.send({
       from: '"Fred Foo 👻" <foo@example.com>',
+      // Array => ['bar@example.com', 'baz@example.com']
       to: "bar@example.com, baz@example.com",
       subject: "Hello ✔",
       text: "Hello world?",
