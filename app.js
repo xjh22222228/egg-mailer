@@ -16,15 +16,15 @@ class Email {
       console.log('Mail Delivery Failed, Check the configuration file.');
       return;
     }
-    
-    let defaultData = Object.assign({}, {
-      from: this.config.mailer && this.config.mailer.auth && this.config.mailer.auth.user
+
+    const defaultData = Object.assign({}, {
+      from: this.config.mailer && this.config.mailer.auth && this.config.mailer.auth.user,
     }, data);
 
     if (Array.isArray(defaultData.to)) {
       defaultData.to = defaultData.to.join();
     }
-    
+
     if (typeof callback === 'function') {
       this.app.mailer.sendMail(defaultData, callback);
       return;
