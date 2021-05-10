@@ -36,7 +36,8 @@
   },
   "files": [
     "config",
-    "app.js"
+    "app.js",
+    "lib"
   ],
   "ci": {
     "version": "8, 10"
