@@ -1,6 +1,6 @@
 {
-  "name": "@didi/mailer",
-  "version": "1.3.5",
+  "name": "@egg-mailer",
+  "version": "1.3.4",
   "description": "mailer plugin for egg",
   "eggPlugin": {
     "name": "mailer"
