@@ -22,9 +22,7 @@
 [download-image]: https://img.shields.io/npm/dm/egg-mailer.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-mailer
 
-
 [README](README.md) | [中文文档](README.zh_CN.md)
-
 
 ## Install
 
@@ -46,20 +44,28 @@ exports.mailer = {
 
 ```js
 // {app_root}/config/config.default.js
-exports.mailer = {
-  host: "smtp.ethereal.email",
-  port: 587,
-  secure: false, // true for 465, false for other ports
-  auth: {
-    user: testAccount.user, // generated ethereal user
-    pass: testAccount.pass  // generated ethereal password
-  }
+'use strict';
+
+module.exports = {
+  mailer: {
+    client: {
+      host: 'smtp.ethereal.email',
+      port: 587,
+      secure: false, // true for 465, false for other ports
+      auth: {
+        user: 'mlvu2qjfxdddlepx@ethereal.email', // generated ethereal user
+        pass: 'XPWzpwngpRkjR2gNwY', // generated ethereal password
+      },
+    },
+  },
+  keys: '123456',
 };
 ```
 
 see [nodemailer](https://nodemailer.com/about/) for more detail.
 
 ## Example
+
 ```js
 // app/controller/home.js
 class HomeController extends Controller {
@@ -69,30 +75,32 @@ class HomeController extends Controller {
     await app.mailer.send({
       from: '"Fred Foo 👻" <foo@example.com>', // sender address, [options] default to user
       // // Array => ['bar@example.com', 'baz@example.com']
-      to: "bar@example.com, baz@example.com", // list of receivers
-      subject: "Hello ✔", // Subject line
-      text: "Hello world?", // plain text body
-      html: "<b>Hello world?</b>" // html body
+      to: 'bar@example.com, baz@example.com', // list of receivers
+      subject: 'Hello ✔', // Subject line
+      text: 'Hello world?', // plain text body
+      html: '<b>Hello world?</b>', // html body
     });
     // async
-    app.mailer.send({
-      from: '"Fred Foo 👻" <foo@example.com>',
-      // Array => ['bar@example.com', 'baz@example.com']
-      to: "bar@example.com, baz@example.com",
-      subject: "Hello ✔",
-      text: "Hello world?",
-      html: "<b>Hello world?</b>"
-    }, function (err, info) {
-      if (err) {
-        throw err;
+    app.mailer.send(
+      {
+        from: '"Fred Foo 👻" <foo@example.com>',
+        // Array => ['bar@example.com', 'baz@example.com']
+        to: 'bar@example.com, baz@example.com',
+        subject: 'Hello ✔',
+        text: 'Hello world?',
+        html: '<b>Hello world?</b>',
+      },
+      function (err, info) {
+        if (err) {
+          throw err;
+        }
+        console.log(info);
       }
-      console.log(info);
-    });
+    );
     ctx.body = 'hi, mailer';
   }
 }
 ```
-
 
 ## Questions & Suggestions
 
