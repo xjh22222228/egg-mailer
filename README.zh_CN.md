@@ -2,7 +2,6 @@
 
 此插件基于 [nodemailer](https://github.com/nodemailer/nodemailer) 实现一个简单的配置封装，具体使用方法你还需要阅读 [nodemailer](https://github.com/nodemailer/nodemailer) 的文档。
 
-
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
 [![Test coverage][codecov-image]][codecov-url]
@@ -23,8 +22,6 @@
 [download-image]: https://img.shields.io/npm/dm/egg-mailer.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-mailer
 
-
-
 ## 开启插件
 
 ```js
@@ -39,18 +36,25 @@ exports.mailer = {
 
 ```js
 // {app_root}/config/config.default.js
-exports.mailer = {
-  host: "smtp.ethereal.email",
-  port: 587,
-  secure: false, // true for 465, false for other ports
-  auth: {
-    user: testAccount.user, // 用户名
-    pass: testAccount.pass  // 密码
-  }
+'use strict';
+
+module.exports = {
+  mailer: {
+    client: {
+      host: 'smtp.ethereal.email',
+      port: 587,
+      secure: false, // true for 465, false for other ports
+      auth: {
+        user: 'mlvu2qjfxdddlepx@ethereal.email', // generated ethereal user
+        pass: 'XPWzpwngpRkjR2gNwY', // generated ethereal password
+      },
+    },
+  },
 };
 ```
 
 ## 使用场景
+
 ```js
 // app/controller/home.js
 class HomeController extends Controller {
@@ -59,25 +63,28 @@ class HomeController extends Controller {
     // 同步
     await app.mailer.send({
       from: '"Fred Foo 👻" <foo@example.com>', // 发件人地址, [可选] 默认为用户名
-      to: "bar@example.com, baz@example.com",  // 接收人名单
-      subject: "Hello ✔",                      // 主题
-      text: "Hello world?",                    // 文本内容
-      html: "<b>Hello world?</b>"              // html body
+      to: 'bar@example.com, baz@example.com', // 接收人名单
+      subject: 'Hello ✔', // 主题
+      text: 'Hello world?', // 文本内容
+      html: '<b>Hello world?</b>', // html body
     });
     // 异步
-    app.mailer.send({
-      from: '"Fred Foo 👻" <foo@example.com>',
-      // 支持数组 ['bar@example.com', 'baz@example.com']
-      to: "bar@example.com, baz@example.com",
-      subject: "Hello ✔",
-      text: "Hello world?",
-      html: "<b>Hello world?</b>"
-    }, function (err, info) {
-      if (err) {
-        throw err;
+    app.mailer.send(
+      {
+        from: '"Fred Foo 👻" <foo@example.com>',
+        // 支持数组 ['bar@example.com', 'baz@example.com']
+        to: 'bar@example.com, baz@example.com',
+        subject: 'Hello ✔',
+        text: 'Hello world?',
+        html: '<b>Hello world?</b>',
+      },
+      function (err, info) {
+        if (err) {
+          throw err;
+        }
+        console.log(info);
       }
-      console.log(info);
-    });
+    );
     ctx.body = 'hi, mailer';
   }
 }
@@ -86,7 +93,6 @@ class HomeController extends Controller {
 ## 详细配置
 
 请到 [nodemailer](https://nodemailer.com/about/) 查看详细配置项说明。
-
 
 ## 提问交流
 
