@@ -2612,7 +2612,7 @@ ee-first@1.1.1, ee-first@^1.1.1, ee-first@~1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
-egg-bin@^4.15.0:
+egg-bin@^4.16.1:
   version "4.16.1"
   resolved "https://registry.yarnpkg.com/egg-bin/-/egg-bin-4.16.1.tgz#5f58a8a0e031bd1291489a9e553f130b6b7aaa69"
   integrity sha512-Nmw88y4DcMIEv9lR+tJ0QyGbzEOrGtkXVxIhT3Hsuz1o6w8vJoj70Aq8O63iRW5KHFkJiZmaWfGel1K+e7tufw==
@@ -2757,7 +2757,7 @@ egg-logrotator@^3.0.5:
     moment "^2.24.0"
     mz "^2.7.0"
 
-egg-mock@^4.0.1:
+egg-mock@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/egg-mock/-/egg-mock-4.1.0.tgz#fce5fc1f5ce78b0caab8bd5ccc04d2bf3d303172"
   integrity sha512-uA7e2litXsCIuiX+xZmhD52xb4i++DD3eov3nXdltoEw4p5nUlOd6KIxzqgZJP+DYJXgVQySCcZlVA/PDr8TVA==
@@ -2909,7 +2909,7 @@ egg-watcher@^3.1.0:
     sdk-base "^3.5.0"
     wt "^1.2.0"
 
-egg@^2.29.1:
+egg@^2.29.4:
   version "2.29.4"
   resolved "https://registry.yarnpkg.com/egg/-/egg-2.29.4.tgz#320375cb8963f4f15ebd8d2d92b8986c16f1a509"
   integrity sha512-sdRWzp8kdDFGC4aRoDkcV3hp7FajUwf/kHrz8tKfyLBq4TM/zt3Bob49uXZCt0HUCBIZxzvTvYfSsfBZDEXf4Q==
@@ -3320,7 +3320,7 @@ eslint-visitor-keys@^2.0.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-2.1.0.tgz#f65328259305927392c938ed44eb0a5c9b2bd303"
   integrity sha512-0rSmRBzXgDzIsD6mGdJgevzgezI534Cer5L/vyMX0kHzT/jiB43jRhd9YUlMGYLQy2zprNmoT8qasCGtY+QaKw==
 
-eslint@^7.16.0:
+eslint@^7.26.0:
   version "7.26.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.26.0.tgz#d416fdcdcb3236cd8f282065312813f8c13982f6"
   integrity sha512-4R1ieRf52/izcZE7AlLy56uIHHDLT74Yzz2Iv2l6kDaYvEu9x+wMB5dZArVL8SYGXSYV2YAg70FcW5Y5nGGNIg==
@@ -5390,7 +5390,7 @@ node-homedir@^1.1.1:
   resolved "https://registry.yarnpkg.com/node-homedir/-/node-homedir-1.1.1.tgz#736db0b60e3bba8aba68df9927de40a7aabe1075"
   integrity sha512-Xsmf94D/DdeDISAECUaxXVxhh+kHdbOQE4CnP4igo3HXL3BSmmUpD5M7orH434EZZwBTFF2xe5SgsQr/wOBuNw==
 
-nodemailer@^6.4.17:
+nodemailer@^6.6.0:
   version "6.6.0"
   resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.6.0.tgz#ed47bb572b48d9d0dca3913fdc156203f438f427"
   integrity sha512-ikSMDU1nZqpo2WUPE0wTTw/NGGImTkwpJKDIFPZT+YvvR9Sj+ze5wzu95JHkBMglQLoG2ITxU21WukCC/XsFkg==
