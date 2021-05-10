@@ -71,7 +71,7 @@ class HomeController extends Controller {
   async index() {
     const { ctx, app } = this;
     // sync
-    const res = await app.mailer.send({
+    const res = await app.mailer.sendMail({
       from: '"Fred Foo 👻" <foo@example.com>', // sender address, [options] default to user
       // // Array => ['bar@example.com', 'baz@example.com']
       to: 'bar@example.com, baz@example.com', // list of receivers
