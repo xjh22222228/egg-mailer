@@ -60,31 +60,17 @@ module.exports = {
 class HomeController extends Controller {
   async index() {
     const { ctx, app } = this;
-    // 同步
-    await app.mailer.send({
-      from: '"Fred Foo 👻" <foo@example.com>', // 发件人地址, [可选] 默认为用户名
-      to: 'bar@example.com, baz@example.com', // 接收人名单
-      subject: 'Hello ✔', // 主题
-      text: 'Hello world?', // 文本内容
+    // sync
+    const res = await app.mailer.send({
+      from: '"Fred Foo 👻" <foo@example.com>', // sender address, [options] default to user
+      to: 'bar@example.com, baz@example.com', // list of receivers
+      subject: 'Hello ✔', // Subject line
+      text: 'Hello world?', // plain text body
       html: '<b>Hello world?</b>', // html body
     });
-    // 异步
-    app.mailer.send(
-      {
-        from: '"Fred Foo 👻" <foo@example.com>',
-        // 支持数组 ['bar@example.com', 'baz@example.com']
-        to: 'bar@example.com, baz@example.com',
-        subject: 'Hello ✔',
-        text: 'Hello world?',
-        html: '<b>Hello world?</b>',
-      },
-      function (err, info) {
-        if (err) {
-          throw err;
-        }
-        console.log(info);
-      }
-    );
+
+    const getRes = app.mailer.nodemailer.getTestMessageUrl(res); 
+
     ctx.body = 'hi, mailer';
   }
 }

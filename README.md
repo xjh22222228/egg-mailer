@@ -71,31 +71,16 @@ class HomeController extends Controller {
   async index() {
     const { ctx, app } = this;
     // sync
-    await app.mailer.send({
+    const res = await app.mailer.send({
       from: '"Fred Foo 👻" <foo@example.com>', // sender address, [options] default to user
-      // // Array => ['bar@example.com', 'baz@example.com']
       to: 'bar@example.com, baz@example.com', // list of receivers
       subject: 'Hello ✔', // Subject line
       text: 'Hello world?', // plain text body
       html: '<b>Hello world?</b>', // html body
     });
-    // async
-    app.mailer.send(
-      {
-        from: '"Fred Foo 👻" <foo@example.com>',
-        // Array => ['bar@example.com', 'baz@example.com']
-        to: 'bar@example.com, baz@example.com',
-        subject: 'Hello ✔',
-        text: 'Hello world?',
-        html: '<b>Hello world?</b>',
-      },
-      function (err, info) {
-        if (err) {
-          throw err;
-        }
-        console.log(info);
-      }
-    );
+
+    const getRes = app.mailer.nodemailer.getTestMessageUrl(res); 
+
     ctx.body = 'hi, mailer';
   }
 }
